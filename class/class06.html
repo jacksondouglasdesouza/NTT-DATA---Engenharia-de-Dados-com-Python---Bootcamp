@@ -205,7 +205,325 @@
                 #---------------------------------------------------------------------------------#
 
                 -->
-            </article>
+
+                <!-- SALVANDO ALTERAÇÕES NO REPOSITÓRIO LOCAL -->
+
+                <!--
+
+            git status <<< Mostra o status do repositório local
+            Vai mostrar os arquivos que foram modificados e que não foram adicionados
+            touch README.md <<< Vai criar um arquivo README.md no formato markdown
+
+            readme.so <<< Vai abrir o site readme.so para criar um README.md online
+
+            git add README.md <<< Adiciona o arquivo README.md para o repositório com todas as edições 
+
+            git commit -m "Adicionado o README.md" <<< Commita o arquivo README.md com a mensagem "Adicionado o README.md"
+
+            git log <<< Mostra o log de commits
+            Vai mostrar o log de commits com o commit do arquivo README.md
+            
+            # CRIANDO UM PASTA COM MKDIR
+
+            mkdir "nome da pasta" <<< Vai criar uma pasta com o nome "nome da pasta"
+
+            git status <<< Mostra o status do repositório local
+            Não vai mostrar alterações no comando poi o GIT não reconhece diretórios vazios
+
+            touch pastaExemplo/resumo-de-aula.md <<< Vai criar um arquivo resumo-de-aula.md na pasta pastaExemplo
+
+            Agora dando o git status vai mostrar o arquivo resumo-de-aula.md como não rastreado
+
+            então pode-se adicionar o arquivo com o comando:
+
+            git add pastaExemplo/resumo-de-aula.md <<< Adiciona o arquivo resumo-de-aula.md para o repositório
+
+            # ADICIONADO O DIRECTÓRIO PASTAEXEMPLO AO GIT IGNORE
+
+            echo "pastaExemplo/" >> .gitignore <<< Adiciona a pasta pastaExemplo ao git ignore
+
+            Agora dando um git status não vai mostrar a pasta pastaExemplo | Vai entrar na condição anterior
+
+            #---------------------------------------------------------------------------------#
+
+            Caso queira que i GIT reconheça um diretório Vazio
+            Adicione um arquivo .gitkeep no diretório vazio
+            AGORA APÓS ADICIONAR O ARQUIVO .gitkeep o GIT VAI RECONHECER O DIRETÓRIO VAZIO
+            Para ter certeza de um git status para ver se o diretório vazio foi reconhecido ou Não
+
+            #---------------------------------------------------------------------------------#
+
+            git add .
+
+            git commit -m "Adicionado a pasta pastaExemplo com o arquivo resumo-de-aula.md"
+
+            git log <<< Mostra o log de commits
+
+            vai mostrar o reacher do commit com a pasta pastaExemplo e o arquivo resumo-de-aula.md
+            
+            #---------------------------------------------------------------------------------#
+
+            após modificar qualquer coisa em qualquer arquivo ou pasta
+            após dar o git status o GIT vai acusar alterações em vermelho
+            sendo necessário adicionar as alterações com o comando git add .
+
+            #---------------------------------------------------------------------------------#
+
+            # COMO DESFAZER ALTERAÇÕES NO REPOSITÓRIO LOCAL DO GIT
+
+
+                No caso de dar um git init em uma pasta errada!
+                USE O COMANDO:
+                rm -rf .git <<< Vai remover o repositório local do git através de força bruta
+
+                após da um git status vai mostrar que o diretório não é um repositório git ou não foi inicializado
+
+                #---------------------------------------------------------------------------------#
+
+                # COMO RESTAURAR UM ARQUIVO MODIFICADO NO REPOSITÓRIO LOCAL DO GIT
+
+                Apos alterar um arquivo e querer restaurar o arquivo para o estado anterior
+                USE O COMANDO:
+
+                git restore "nome do arquivo" <<< Vai restaurar o arquivo para o estado anterior
+
+                Tem que ter certeza ao utilizar este comando pois ele vai restaurar o arquivo para o estado anterior
+                e deletar tudo que está no estado atual do arquivo
+
+                #---------------------------------------------------------------------------------#
+
+
+
+                # COMO ALTERAR A MENSAGEM DO ÚLTIMO COMMIT NO REPOSITÓRIO LOCAL DO GIT
+
+                Após dar um commit e querer alterar a mensagem do último commit
+                USE O COMANDO:
+
+                git commit --amend -m "Nova mensagem do commit" <<< Vai alterar a mensagem do último commit
+
+                APÓS O GIT LOGO VAI MOSTRAR A NOVA MENSAGEM DO ÚLTIMO COMMIT
+
+                OUTRA FORMA DE ALTERAR A MENSAGEM DO ÚLTIMO COMMIT
+
+                git commit --amend <<< Vai abrir o editor de texto para alterar a mensagem do último commit
+                SE VOCÊ USA  O VIM PARA EDITAR O TEXTO APERTE O I PARA ENTRAR NO MODO DE EDIÇÃO
+
+                Para sair:
+
+                ESC: WQ <<< Salva e sai do editor de texto
+
+                #---------------------------------------------------------------------------------#
+                
+
+                # RETORNANDO UM COMMIT ESPECÍFICO NO REPOSITÓRIO LOCAL DO GIT
+
+                após o git log e a apresentação do histórico de commits
+                Após encontrar o commit que deseja retornar
+
+                copie o código do commit Hash do commit
+
+                Use o comando para retornar a um commit específico e cole a hash do commit copiada anteriormente
+
+                use o comando:
+
+                git reset --soft "hash do commit" <<< Vai retornar ao commit específico
+
+                Após o git status vai mostrar que o arquivo foi modificado e que o commit foi retornado para a nossa
+                área de trabalho, preparação, ou staging area
+                
+                #---------------------------------------------------------------------------------#
+
+                Crie um novo commit com as alterações feitas após o retorno do commit específico
+                e adicione as alterações com o comando git add .
+                e depois
+                git commit -m "Nova mensagem do commit" <<< Vai criar um novo commit com as alterações feitas após o retorno do commit específico
+
+                ### MIXED ###
+
+                git reset --mixed "hash do commit" <<< Vai retornar ao commit específico
+
+                Após o git status vai mostrar que o arquivo foi modificado e que o commit foi retornado para a nossa
+                área de trabalho, preparação, ou staging area 
+                o DOCUMENTOS APRESENTAM O STATUS DE MODIFICADO MAIS AINDA NÃO ESTÃO PREPARADOS OU RECONHECIDOS PELO GIT
+                
+                #---------------------------------------------------------------------------------#
+
+                ### HARD ###
+
+                git reset --hard "hash do commit" <<< Vai retornar ao commit específico
+
+                após o git status vai mostrar que o arquivo foi excluído e que o commit totalmente removido do repositório
+
+                # USANDO O GIT REFLOG PARA ENCONTRAR O HASH DO COMMIT E TODAS AS ULTIMAS AÇÕES REALIZADAS NO REPOSITÓRIO
+
+                git reflog <<< Vai mostrar o histórico de commits e todas as ações realizadas no repositório
+
+                #---------------------------------------------------------------------------------#
+
+                # APAGANDO E RECUPERANDO ARQUIVOS NO REPOSITÓRIO LOCAL DO GIT
+
+                Para deletar um arquivo do repositório local do git
+
+                USE O COMANDO:
+
+                git reset pasta/arquivo <<< Vai deletar o arquivo do repositório local do git
+
+                Após deletar um arquivo e querer recuperar o arquivo deletado
+
+                USE O COMANDO:
+
+                git restore --staged pasta/arquivo <<< Vai recuperar o arquivo deletado do repositório local do git
+
+                #---------------------------------------------------------------------------------#
+
+                # ENVIANDO E bAIXANDO ALTERAÇÕES COM O REPOSITÓRIO REMOTO
+
+                crie o repositório no github
+                git remote add origin "endereço ssh do repositório remoto" <<< Adiciona o endereço ssh do repositório remoto
+                git push -u origin main <<< Envia os arquivos para o repositório remoto
+
+
+                #---------------------------------------------------------------------------------#
+
+                FAZENDO ALTERAÇÕES NO GITHUB E BAIXANDO AS ALTERAÇÕES PARA O REPOSITÓRIO LOCAL
+
+                Após fazer alterações no github e querer baixar as alterações para o repositório local
+
+                USE O COMANDO:
+
+                git pull <<< Atualiza o repositório local com o repositório remoto
+
+                #---------------------------------------------------------------------------------#
+
+                # TRABALHANDO COM BRAHCHES NO GIT - CRIANDO | MESCLANDO | DELETANDO E TRATANDO CONFLITOS#
+
+                Branch é uma ramificação do repositório principal - seu projeto.
+
+                git log para ver o commit inicial <<<
+                crie um arquivoarquivo.md
+                git add arquivo.md
+                git commit -m "Adicionado o arquivo.md"
+                git log <<< Vai mostrar o log de commits com o commit do arquivo.md
+                    #--
+                git branch <<< Vai mostrar a branch atual
+                git branch "nome da branch" <<< Vai criar uma nova branch
+                Ou 
+                git checkout -b "nome da branch" <<< Vai criar uma nova branch e mudar para a nova branch
+                git branch <<< Vai mostrar a branch atual e a nova branch criada
+
+                gir checkout "nome da branch" <<< Vai mudar para a branch criada
+                ou
+                git checkout main <<< Vai mudar para a branch principal
+
+                # PARA VER A LISTA DOS ULTIMOS COMMITS DE CADA BRANCH
+                USE O COMANDO:
+
+                git branch -v <<< Vai mostrar a lista dos últimos commits de cada branch
+
+                # PARA MESCLAR UMA BRANCH COM A BRANCH PRINCIPAL
+
+                USE O COMANDO:
+
+                git merge "nome da branch" <<< Vai mesclar a branch com a branch principal
+
+                #PARA DELETAR UMA BRANCH
+
+                USE O COMANDO:
+
+                git branch -d "nome da branch" <<< Vai deletar a branch
+
+                #---------------------------------------------------------------------------------#
+
+                # TRATANDO CONFLITOS ENTRE BRANCHES NO GIT
+
+                Após criar uma branch e fazer alterações em um arquivo
+                e depois fazer alterações no mesmo arquivo na branch principal
+
+                USE O COMANDO:
+
+                GIT PUSH <<< VAI DAR UM ERRO DE CONFLITO ENTRE AS BRANCHES
+
+                PARA RESOLVER O CONFLITO ENTRE AS BRANCHES
+
+                escolha quais alterações você quer manter no documento e salve o arquivo
+
+                USE O COMANDO:
+
+                git add arquivo.md <<< Adiciona o arquivo com as alterações escolhidas
+                git commit -m "Resolvido o conflito entre as branches" <<< Vai commitar o arquivo com as alterações escolhidas
+                git push <<< Vai enviar as alterações para o repositório remoto
+
+                #---------------------------------------------------------------------------------#
+
+                # COMANDO PARA AJUDAR NO DIA DIA
+
+                Para baixar as alterações do repositório remoto e não quero mesclar as alterações com o repositório local
+
+                USE O COMANDO:
+
+                git fetch origin main <<< Vai baixar as alterações do repositório remoto
+                
+            # NÃO FOI USADO O COMANDO#
+
+            git diff origin/main <<< Vai mostrar as diferenças entre o repositório local e o repositório remoto
+            TAMBÉM SERIA UMA OPÇÃO
+
+            # PARA TRAZER AS ALTERAÇÕES DO REPOSITÓRIO REMOTO PARA O REPOSITÓRIO LOCAL E MESCÁ-LAS
+
+            USE O COMANDO:
+
+            git merge origin/main <<< Vai trazer as alterações do repositório remoto para o repositório local e mesclá-las
+
+            #---------------------------------------------------------------------------------#
+
+            # CLONANDO APENAS UMA BRANCH ESPECÍFICA DO REPOSITÓRIO REMOTO#
+
+            git clone URL DO REPO --branch "nome da branch a ser criado" --single-branch
+
+            #---------------------------------------------------------------------------------#
+
+            IMAGE UMA SITUAÇÃO:
+
+            Você está trabalhando em um projeto e sem querer apaga um arquivo, logo
+            após você usar o git status, vai apresentar que você teve uma alteração
+            com o arquivo deletado, então você pode usar o comando:
+
+            É se você precisar criar uma nova Branch e não quer que essa modificação anterior vá
+            junto com a nova Branch, você pode usar o comando:
+
+            git stash <<< Vai salvar as alterações e limpar a área de trabalho
+
+            Usando o comando anterior, a modificação será arquivada e a área de trabalho limpa.
+
+            Para verificar a lista de modificações arquivadas.
+
+            USE O COMANDO:
+
+            git stash list <<< Vai mostrar a lista de modificações arquivadas
+
+            Crie uma branch nova
+
+            USE O COMANDO:
+
+            git checkout -b "nome da branch" <<< Vai criar uma nova branch
+
+            Agora veja que não estão ali as ultimas modificações como era imaginado.
+            
+            USE O COMANDO:
+
+            git checkout "nome da branch" <<< Vai mudar para a branch usada anteriormente
+            
+            PARA TRAZER AS MODIFICAÇÕES ARQUIVADAS DE VOLTA PARA A BRANCH ATUAL
+            USE O COMANDO:
+
+            git stash pop <<< Vai trazer as modificações arquivadas de volta para a branch atual e limpar a área de trabalho
+
+            ou 
+
+            git stash apply <<< Vai trazer as modificações arquivadas de volta para a branch atual e manter a área de trabalho com as modificações
+            para um uso futuro
+
+            --></article>
         </main>
         <!-- -->
         <footer>
