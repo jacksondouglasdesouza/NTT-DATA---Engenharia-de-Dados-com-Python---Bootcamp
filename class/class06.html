@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Aula de Github</title>
+    </head>
+    <body>
+        <header>
+            <h1>Aula de Github - Bootcamp</h1>
+        </header>
+        <main>
+            <article>
+                <!--
+
+                # COMANDOS GIT DA AULA
+
+            Configurações de usuário do GIT
+            git config --global
+            git config --global user.name "Nome do usuário" <<< Username do github é uma dica
+            git config --global user.email "E-mail do usuário" <<< E-mail do github é uma dica
+            git config --global core.editor "Nome do editor" <<< Editor de texto que você usa
+
+            git config init.defaultBranch <<< Vai mostrar a branch principal do repositório
+            Para alterar a branch principal do repositório
+            git config --global init.defaultBranch >>> Nome da branch{main} <<<
+            
+            Para chegar as configurações do GIT global usa-se:
+
+            git config --global --list 
+
+            retorna-rá as configurações globais do seu repositório local GIT
+
+            exemplo de retorno:
+            user.name=Nome do usuário
+            user.email=E-mail do usuário
+            core.editor=Nome do editor
+            init.defaultBranch=main
+
+            git config --global --unset user.name <<< Remove o nome do usuário
+            git config --global --unset user.email <<< Remove o e-mail do usuário
+            git config --global --unset core.editor <<< Remove o editor de texto
+            git config --global --unset init.defaultBranch <<< Remove a branch principal do repositório
+            git config --global --unset <<< Remove todas as configurações globais do repositório
+
+            -->
+
+                <!-- GITHUB - COMANDOS DA AULA -->
+
+                <!--
+
+                git clone "endereço do repositório a ser clonado" <<< Clona um repositório remoto para o repositório local
+                Vai solicitar o usuário e senha do github <<<
+                vai clonar e add uma cópia do repositório remoto para o repositório local
+
+                //-- Criando as credenciais do github no computador local --//
+
+                //--git config credential.helper cache <<< Salva as credenciais do github no computador
+                //--local para quem usa o computador compartilha com outras pessoas pode usar o cache e armazena as credenciais temporariamente
+                
+                git config credential.helper store <<< Salva as credenciais do github no computador
+                ou
+                git config --global credential.helper store <<< Salva as credenciais do github no computador
+                Se você usa o computador sozinho pode usar o store e armazena as credenciais permanentemente
+                Usa-se o store para salvar as credenciais permanentemente
+
+                Checando os parâmetros de credenciais do github no seu computador
+
+
+                git config --global credential.helper <<< Checa o parâmetro de credenciais do github no computador
+                git config --global --show-origin credential.helper <<< Checa o parâmetro de credenciais do github no computador
+                Vai mostrar o arquivo onde está armazenado as credenciais do github no computador endereço do arquivo | diretório do arquivo
+
+                #---------------------------------------------------------------------------------#
+
+                estando na página do git localmente
+                pode-se usar o comando:
+                cat .gitconfig <<< Mostra o arquivo de configuração do git
+                Vai mostrar o arquivo de configuração do git | vai abrir o arquivo de configuração do git
+
+                ou
+
+                cat .git-credentials <<< Mostra o arquivo de credenciais do git com seu token
+
+                #---------------------------------------------------------------------------------#
+
+
+                
+                ####################### Comandos Estudados por fora da aula #######################
+                git init <<< Inicializa o repositório local
+                git status <<< Mostra o status do repositório
+                git add . <<< Adiciona todos os arquivos para o repositório
+                git commit -m "Mensagem" <<< Commita os arquivos adicionados
+                git log <<< Mostra o log de commits
+                git remote add origin <<< Adiciona o endereço ssh repositório remoto
+                git push -u origin main <<< Envia os arquivos para o repositório remoto
+                git pull <<< Atualiza o repositório local com o repositório remoto
+
+            -->
+
+                <!--AULA - CRIANDO E CLONANDO REPOSITÓRIOS -->
+
+                <!--
+
+                comandos:
+
+                mkdir " nome da pasta" <<< vai criar um novo diretório
+                cd "nome da pasta" <<< vai entrar no diretório criado
+                git init <<< vai inicializar o repositório local
+                Vai informar que o repositório foi inicializado e vai mostrar o endereco do repositório local
+                Exemplo: Initialized empty Git repository in /home/usuario/nome-da-pasta/.git/
+
+                cat config <<< vai mostrar o arquivo de configuração do git
+
+                exemplo de retorno:
+                [core]
+                repositoryformatversion = 0
+                filemode = true
+                bare = false
+                logallrefupdates = true
+                [remote "origin"]
+                url =
+                fetch = +refs/heads/*:refs/remotes/origin/*
+                [branch "main"]
+                ......................
+
+                #---------------------------------------------------------------------------------#
+                Clonando e alterando o nome do repositório localmente
+
+                git clone "endereço do repositório a ser clonado" <<< Clona um repositório remoto para o repositório local
+                Vai solicitar o usuário e senha do github <<<
+                vai clonar e add uma cópia do repositório remoto para o repositório local
+                git clone "endereço do repositório a ser clonado" //--"NOVO NOME DA PASTA"--//  <<< VAI CLONAR E ALTERAR O NOME DA PASTA
+
+                #---------------------------------------------------------------------------------#
+
+                git remote add origin "endereço ssh do repositório remoto" <<< Adiciona o endereço ssh do repositório remoto
+                
+                cat .gitconfig <<< Mostra o arquivo de configuração do git do nome repositório e seu endereço de repositório remoto
+
+                exemplo de retorno:
+
+                [remote "origin"]
+                url = "endereço ssh do repositório remoto"
+                fetch = +refs/heads/*:refs/remotes/origin/*
+                ....
+
+                #---------------------------------------------------------------------------------#
+
+                outra opção de uso para git clone
+
+                git clone URL --branch "nome da branch a ser criado" --single-branch
+                <<< Vai clonar o repositório remoto e criar uma branch específica  
+
+                #---------------------------------------------------------------------------------#
+
+                ###########################################
+                CHECANDO SE HÁ CHAVE SSH NO COMPUTADOR
+                ###########################################
+                
+                ls -al ~/.ssh <<< Vai mostrar as chaves ssh no computador
+                Vai mostrar as chaves ssh no computador
+                exeplo:
+
+                total 24  
+                drwxr-xr-x  2 usuario usuario 4096 ago  3 10:00 .
+                drwxr-xr-x 10 usuario usuario 4096 ago  3 10:00 ..
+                -rw-------  1 usuario usuario  464 ago  3 10:00 id_rsa
+                -rw-r--r--  1 usuario usuario   97 ago  3 10:00 id_rsa.pub
+                -rw-r--r--  1 usuario usuario  222 ago  3 10:00 known_hosts
+
+                #---------------------------------------------------------------------------------#
+
+                Se não tinha chave ssh no computador pode criar com os comandos:
+
+                ssh-keygen -t ed25519 -C "seu-email" <<< Cria uma chave ssh no computador
+                enter
+                vai pedir para digitar uma senha
+                enter
+                Vai gerar uma chave ssh no computador pública e uma privada
+
+                #---------------------------------------------------------------------------------#
+
+                Ativar o SSH Agent no computador
+
+                eval "$(ssh-agent -s)" <<< Ativa o SSH Agent no computador
+                
+                agora com o comando ssh-add ~/.ssh/ed_25519 <<< Adiciona a chave privada ao SSH Agent
+                Vai pedir a senha da chave privada
+                Vai adicionar a chave privada ao SSH Agent
+
+                #---------------------------------------------------------------------------------#
+
+                Adicionando a chave pública ao github
+
+                cat ~/.ssh/id_rsa.pub <<< Vai mostrar a chave pública
+                Copia a chave pública
+                Vai no github
+                Vai em settings
+                Vai em SSH and GPG keys
+                Vai em New SSH key
+                Cola a chave pública
+                Add SSH key
+
+                #---------------------------------------------------------------------------------#
+
+                -->
+            </article>
+        </main>
+        <!-- -->
+        <footer>
+            <h4></h4>
+            <p></p>
+            <a href=""></a>
+        </footer>
+    </body>
+</html>

@@ -17,3 +17,4 @@ print(f'Sua idade é {idade}')
 
 print('a', 'b', 'c', sep='-', end='\n')
 print('d', 'e', 'f')
+
