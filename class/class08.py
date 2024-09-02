@@ -1,5 +1,5 @@
 # NTT DATA BOOTCAMP - Engenharia de Dados com Python
-# Aula 07 - 29/08/2024
+# Aula 08 - 29/08/2024
 # Tipos de operadores em Python
 
 # Operadores de comparação
