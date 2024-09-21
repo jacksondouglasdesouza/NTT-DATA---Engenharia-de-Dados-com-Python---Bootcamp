@@ -6,6 +6,8 @@ Este é um projeto simples de um sistema bancário desenvolvido em Python. O sis
 
 ### Codigo
 
+<img src="./img/code_bank_version_01.png">
+
 ## Funcionalidades
 
 -   **Depósito**: O usuário pode realizar depósitos no saldo bancário. Há uma validação que impede depósitos de valores negativos ou iguais a zero.
