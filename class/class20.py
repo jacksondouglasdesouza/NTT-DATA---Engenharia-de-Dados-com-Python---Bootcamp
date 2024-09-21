@@ -1,5 +1,5 @@
 # NTT DATA BOOTCAMP - Engenharia de Dados com Python
-# Aula 19 - 18/09/2024
+# Aula 20 - 18/09/2024
 
 #FUNÇÕES EM PYTHON
 
