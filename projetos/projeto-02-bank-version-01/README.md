@@ -29,6 +29,6 @@ Aqui está um exemplo de como o sistema funciona:
 
 ### Veja a simulação do código em funcionamento no vídeo a seguir:
 
-[![Veja a simulação](./img/projeto02-bank-version01.png)](https://www.youtube.com/watch?v=z6rg_YeXgWU)
+[![Veja a simulação](./img/projeto02-bank-version01%20-%20tumb.png)](https://www.youtube.com/watch?v=z6rg_YeXgWU)
 
 > Clique na imagem acima para assistir à demonstração completa do sistema bancário em ação.
