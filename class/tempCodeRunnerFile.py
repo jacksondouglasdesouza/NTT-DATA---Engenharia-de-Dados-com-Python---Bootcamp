@@ -26,7 +26,7 @@ print(lista_01)
 #-- 
 
 li_01= lista_01.copy()
-0
+
 print(" \n ")
 
 print(id(lista_01))

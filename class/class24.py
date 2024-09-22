@@ -1,5 +1,5 @@
 # NTT DATA BOOTCAMP - Engenharia de Dados com Python
-# Aula 23 - 21/09/2024
+# Aula 24 - 21/09/2024
 
 # Listas: Métodos da classe list
 
