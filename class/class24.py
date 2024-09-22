@@ -169,3 +169,9 @@ lista_sorted_completa = ["C", "C++", "C#", "Java", "Python", "Ruby", "JavaScript
 print(" \n ")
 
 print(lista_sorted_completa)
+
+lista_sorted_completa.sort()
+
+print(" \n ")
+
+print(lista_sorted_completa)

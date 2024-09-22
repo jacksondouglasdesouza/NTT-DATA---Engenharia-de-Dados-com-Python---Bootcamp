@@ -4,7 +4,7 @@
 
 Este é um projeto simples de um sistema bancário desenvolvido em Python. O sistema permite que o usuário realize operações como depósitos, saques, visualize o extrato bancário e finalize a sessão.
 
-### Codigo
+### Código
 
 <img src="./img/code_bank_version_01.png">
 
