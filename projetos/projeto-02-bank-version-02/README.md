@@ -27,7 +27,7 @@ Consultas Ilimitadas ao Extrato: Mesmo após atingir o limite de transações di
 
 ### Veja a simulação do código em funcionamento no vídeo a seguir:
 
-[![Veja a simulação](./img/bank_version02_tumb.png)](https://www.youtube.com/watch?v=z6rg_YeXgWU)
+[![Veja a simulação](./img/bank_version02_tumb.png)](https://www.youtube.com/watch?v=FCWPekfey3w)
 
 > Clique na imagem acima para assistir à demonstração completa do sistema bancário em ação.
 

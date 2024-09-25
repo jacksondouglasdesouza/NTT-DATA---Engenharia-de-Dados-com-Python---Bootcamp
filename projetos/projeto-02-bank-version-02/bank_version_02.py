@@ -4,7 +4,7 @@ import pytz
 # NTT DATA BOOTCAMP - Engenharia de Dados com Python
 # Aula 31 - 24/09/2024
 
-# Criando um Sistema Bancário com Python - Versão 03
+# Criando um Sistema Bancário com Python - Versão 02
 
 fuso_brasil = pytz.timezone('America/Sao_Paulo')
 
